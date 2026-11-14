@@ -1,0 +1,314 @@
+:root {
+    /*variaveis var() */
+    --cor-primaria: #0d7a75;
+    --cor-fundo: #f4f4f4;
+    --cor-caixa: #ededed;
+    --cor-borda: #cccccc;
+    --cor-texto: #333333;
+    --cor-branco: #ffffff;
+    
+    --cor-edicao: #1ca3ff;
+    --cor-completa: #8cff8c;
+    --cor-incompleta: #fff0d4;
+    --cor-restrita: #888888;
+    --cor-destaque: #ffcc00;
+}
+
+/*Limpa pagina weeb*/
+* {
+    box-sizing: border-box; /*para nao partir o alinhamento*/
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/*corpo geral da pagina*/
+body {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    padding: 1rem; /*16px default margem de seguranca*/
+}
+
+    /*Menu do topo inicio*/
+/*pinta e centra os botoes e a barra*/
+.barra-navegacao {
+    background-color: var(--cor-primaria);
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+/*estilo dos botoes e mouse*/
+.btn-nav {
+    background-color: var(--cor-branco);
+    color: var(--cor-primaria);
+    border: none;
+    padding: 0.5rem 1.25rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 0.4rem;
+    cursor: pointer;
+}
+
+/*sombra para active butao*/
+.btn-nav.ativo {
+    box-shadow: inset 0 0 0 2px var(--cor-texto);
+}
+    /*Menu do topo fim*/
+
+    /*Estrutura do ecra*/
+/*limite max e centrar*/
+.seccao {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/*esconde elementos do ecra mas nao apaga*/
+.oculto {
+    display: none !important;
+}
+
+/*cor e tamanho ao titulo*/
+.titulo-seccao {
+    color: var(--cor-primaria);
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+}
+
+/*cor e tamanho ao subtitulo*/
+.subtitulo-seccao {
+    color: var(--cor-primaria);
+    text-align: center;
+    font-size: 1.4rem;
+    margin: 1.5rem 0 0.75rem 0;
+}
+    /*Estrutura do ecra fim*/
+
+    /*Combo boxes*/
+/*list dropdown ocupa largura max forced*/
+.select-evento {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid var(--cor-borda);
+    border-radius: 0.25rem;
+    background-color: var(--cor-branco);
+    margin-bottom: 0.75rem;
+}
+
+/*flexbox center*/
+.contentor-select-data {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+}
+
+/*dia plan select*/
+.select-data {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.95rem;
+    border: 1px solid var(--cor-borda);
+    border-radius: 0.25rem;
+}
+    /*Combo boxes end*/
+
+    /*Botoes de, +, lixo e cancelar*/
+/*contentor dos botoes*/
+.barra-acoes-evento {
+    display: flex;
+    flex-direction: column; /*empilhar verticalmente*/
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/*separa os botoes*/
+.separador {
+    width: 100%;
+    border-bottom: 1px solid var(--cor-borda);
+    text-align: center;
+    padding: 0.3rem 0;
+}
+
+/*remove o fundo e a borda padrao (btn cancelar)*/
+.btn-icone {
+    background: none;
+    border: none;
+    font-size: 1.3rem;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0.2rem 0.5rem;
+}
+    /*Botoes fim*/
+
+    /*"Form" de configuracao*/
+/*config das linhas da grid*/
+.linha-config {
+    display: grid;
+    grid-template-columns: 180px 1fr; /*duas colunas, uma fixa outra o resto que sobra*/
+    align-items: center;
+    margin-bottom: 0.75rem;
+    gap: 1rem;
+}
+
+/*config dos "titulos"*/
+.label-config {
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+
+/*Cria a barra cinzenta*/
+.caixa-itens {
+    background-color: var(--cor-caixa);
+    border: 1px solid var(--cor-borda);
+    border-radius: 0.25rem;
+    min-height: 2.75rem;
+    padding: 0.4rem 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /*dados ha esquerda btn direita*/
+    gap: 0.5rem;
+}
+
+/*contentor invisivel na barra cinzenta*/
+.lista-elementos {
+    display: flex;
+    flex-wrap: wrap; /*barra full > passa os itens para a barra de baixo*/
+    gap: 0.75rem;
+    align-items: center;
+    flex: 1; /*push left*/
+}
+
+/*config do contentor do item*/
+.item-config {
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.2rem;
+    cursor: pointer;
+}
+
+/*darken ao passar por cima*/
+.item-config:hover {
+    background-color: #dcdcdc;
+}
+    /*"Form" de configuracao fim*/
+
+    /*"Form" de adicao (btn +)*/
+/*alinha lado a lado as caixas*/
+.form-inline {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+}
+
+/*formata as bordas dos campos de escrita*/
+.input-inline {
+    padding: 0.25rem 0.4rem;
+    border: 1px solid var(--cor-borda);
+    border-radius: 0.2rem;
+}
+
+/*encurta o width no campo do min de pessoas*/
+.input-numero {
+    width: 60px;
+}
+    /*"Form" de adicao (btn +) fim*/
+
+.contentor-tabela {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.tabela-planeamento {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    margin-bottom: 1rem;
+}
+
+.tabela-planeamento th,
+.tabela-planeamento td {
+    border: 1px solid #999999;
+    padding: 0.5rem;
+    text-align: center;
+    font-size: 0.9rem;
+    min-height: 2.2rem;
+}
+
+.tabela-planeamento th,
+.tabela-planeamento td.coluna-periodo {
+    background-color: var(--cor-primaria);
+    color: var(--cor-branco);
+    font-weight: bold;
+}
+
+.cabecalho-clicavel {
+    cursor: pointer;
+}
+
+.celula-interativa {
+    cursor: pointer;
+    background-color: #eef2ff;
+}
+
+.estado-edicao {
+    background-color: var(--cor-edicao) !important;
+    color: var(--cor-branco);
+}
+
+.estado-completa {
+    background-color: var(--cor-completa) !important;
+}
+
+.estado-incompleta {
+    background-color: var(--cor-incompleta) !important;
+}
+
+.estado-restrita {
+    background-color: var(--cor-restrita) !important;
+    cursor: not-allowed;
+}
+
+.estado-destaque {
+    background-color: var(--cor-destaque) !important;
+    color: var(--cor-texto) !important;
+}
+
+.contentor-botoes-planeamento {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 1rem 0;
+}
+
+.btn-aceitar {
+    background-color: var(--cor-primaria);
+    color: var(--cor-branco);
+    border: 1px solid var(--cor-texto);
+    padding: 0.5rem 1.25rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+
+.btn-cancelar {
+    background-color: var(--cor-completa);
+    color: var(--cor-texto);
+    border: 1px solid var(--cor-texto);
+    padding: 0.5rem 1.25rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .linha-config {
+        grid-template-columns: 1fr;
+        gap: 0.25rem;
+    }
+
+    .tabela-planeamento {
+        table-layout: auto;
+    }
+}
